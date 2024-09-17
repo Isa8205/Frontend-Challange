@@ -194,6 +194,42 @@
             }
 
         }
+
+        .greet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .greet > .shipment-action {
+            background-color: white;
+            border-radius: 1.5em;
+            padding: 1em;
+        }
+
+        .greet > .shipment-action > .calender {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .5em .5em;
+            gap: .5em;
+            border-radius: 1.5em;
+            background-color: #F6F6F6;
+        }
+
+        .btn-csv {
+            border: #EBEBEB solid 2px;
+            border-radius: 1.5em;
+            background-color: white;
+            padding: 0 2em;
+        }
+
+        .btn-ship {
+            padding: 0em 2em;
+            background-color: black;
+            border-radius: 1.5em;
+            color: white;
+        }
     </style>
 
 </head>
@@ -241,11 +277,33 @@
 
     <main>
         <section class="greet">
+
             <div class="greet-user">
                 <h4>Hello Isaiah</h4>
                 <h1>Good Morning</h1>
             </div>
-            <div class="shipment-action"></div>
+
+            <div class="shipment-action d-flex justify-content-between gap-2">
+                <div class="calender d-flex justify-content-between">
+                    <span class="left"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg></i></span>
+                    <span class="middle">
+                        <p class="text-sm">Timeframe</p>
+                        <p class="m-0">Dec 2022</p>
+                    </span>
+                    <span class="right"><i class="fas fa-angle-down"></i></span>
+                </div>
+
+                <button class="btn-csv">Export CSV</button>
+
+                <button class="btn-ship">Add new shipment</button>
+            </div>
+
+        </section>
+
+        <section class="statistics row">
+            <div class="col-md-7">hw</div>
+            <div class="col-md-2">ho</div>
+            <div class="col-md-3">w</div>
         </section>
     </main>
     
