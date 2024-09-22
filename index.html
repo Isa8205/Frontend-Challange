@@ -143,6 +143,18 @@
         cursor: pointer;
       }
 
+      .right .search-bar {
+        background: white;
+        border-radius: 1.5em;
+      }
+
+      .right .search-bar > input {
+        border: #ebebeb solid 2px;
+        border-radius: 1em;
+        color: black;
+        padding: 0.5em;
+      }
+
       .right > .user-profile {
         display: flex;
         gap: 0.5em;
@@ -292,7 +304,15 @@
         <div class="right">
           <div class="actions">
             <ul>
-              <li class="action-btn"><i class="fa fas fa-search"></i></li>
+              <li class="search-bar">
+                <input
+                  type="search"
+                  name="search"
+                  id=""
+                  placeholder="Type in something"
+                />
+                <i class="fa fas fa-search action-btn"></i>
+              </li>
               <li class="action-btn"><i class="fa far fa-bell"></i></li>
             </ul>
           </div>
@@ -342,8 +362,9 @@
                 <path d="M16 14h.01" />
                 <path d="M8 18h.01" />
                 <path d="M12 18h.01" />
-                <path d="M16 18h.01" /></svg
-            ></span>
+                <path d="M16 18h.01" />
+              </svg>
+            </span>
             <span class="middle">
               <p class="text-sm">Timeframe</p>
               <p class="m-0">Dec 2022</p>
