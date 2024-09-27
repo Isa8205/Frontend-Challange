@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ArrowRightCircle, HashIcon } from "lucide-react";
 
 function ListGroup() {
   let items = ["Kenya", "New York", "Barcelona", "London"];
@@ -23,7 +24,9 @@ function ListGroup() {
                 setSelectedIndex(index);
               }}
             >
+              <ArrowRightCircle />
               {item}
+              <HashIcon color="currentcolor" size="12" strokeWidth="3" />
             </li>
           );
         })}
