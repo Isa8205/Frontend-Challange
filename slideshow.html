@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slideshow</title>
+
+    <style>
+      .slideshows {
+        width: 100%;
+        position: relative;
+      }
+
+      .slideshows > .active {
+        display: block;
+      }
+
+      .slideshow {
+        position: relative;
+        display: none;
+      }
+
+      .slideshow > img {
+        width: 100%;
+        height: 55vh;
+        object-fit: cover;
+      }
+
+      .prev {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -22px;
+        color: white;
+        font-size: 1.5em;
+        cursor: pointer;
+        padding: 1em 0.5em;
+        border-radius: 0 0.5em 0.2em 0;
+      }
+
+      .prev:hover {
+        background-color: rgba(0, 0, 0, 0.596);
+      }
+
+      .next {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -22px;
+        color: white;
+        font-size: 1.5em;
+        cursor: pointer;
+        padding: 1em 0.5em;
+        border-radius: 0.5em 0 0 0.2em;
+      }
+
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.596);
+      }
+
+      .numbertext {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1em 0.5em;
+        color: white;
+      }
+
+      .caption-text {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 18px;
+        font: arial;
+        padding: 3em 1em;
+      }
+
+      .dots {
+        text-align: center;
+      }
+
+      .dots > .active {
+        background-color: #a6a1a1;
+      }
+
+      .dot {
+        width: 1em;
+        height: 1em;
+        margin: 0 2px;
+        border-radius: 50%;
+        background-color: #bbb;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .dot:hover {
+        background-color: #a6a1a1;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="slideshow-cont">
+      <div class="slideshows">
+        <div class="slideshow active">
+          <div class="numbertext">1/4</div>
+          <img src="image1.jpg" alt="slide1" />
+          <div class="p caption-text">Slide1</div>
+        </div>
+        <div class="slideshow">
+          <div class="numbertext">2/4</div>
+          <img src="image2.jpg" alt="slide2" />
+          <div class="p caption-text">Slide2</div>
+        </div>
+        <div class="slideshow">
+          <div class="numbertext">3/4</div>
+          <img src="image3.jpg" alt="slide3" />
+          <div class="p caption-text">Slide3</div>
+        </div>
+        <div class="slideshow">
+          <div class="numbertext">4/4</div>
+          <img src="image4.jpg" alt="slide4" />
+          <div class="p caption-text">Slide4</div>
+        </div>
+
+        <span class="prev" id="prev">&#10094;</span>
+        <span class="next" id="next">&#10095;</span>
+      </div>
+      <br />
+
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slideshows = document.querySelectorAll(".slideshow");
+        const dots = document.querySelectorAll(".dot");
+        const next = document.getElementById("next");
+        const prev = document.getElementById("prev");
+        let slideIndex = 1;
+
+        function showSlide(index) {
+          index = index - 1;
+          dots.forEach((element) => {
+            element.classList.remove("active");
+          });
+          slideshows.forEach((element) => {
+            element.classList.remove("active");
+          });
+
+          dots[index].classList.add("active");
+          slideshows[index].classList.add("active");
+        }
+
+        // Initialize the first slide to show
+        showSlide(slideIndex);
+
+        dots.forEach((element, index) => {
+          element.addEventListener("click", () => {
+            clearTimeout();
+            showSlide(index + 1);
+            slideIndex = index + 1; // Update slideIndex when clicking a dot
+          });
+        });
+
+        next.addEventListener("click", () => {
+          clearTimeout();
+          slideIndex += 1;
+          slideIndex = slideIndex > slideshows.length ? 1 : slideIndex;
+
+          showSlide(slideIndex);
+        });
+
+        prev.addEventListener("click", () => {
+          clearTimeout();
+          slideIndex -= 1;
+          slideIndex = slideIndex < 1 ? slideshows.length : slideIndex;
+
+          showSlide(slideIndex);
+        });
+      });
+    </script>
+  </body>
+</html>
