@@ -1,3 +1,4 @@
+import ClassComponent from "./components/ClassComponenet";
 import HexGenerator from "./components/HexGenerator";
 import ListGroup from "./components/ListGroup";
 import ProfileCard from "./components/ProfileCard";
@@ -16,7 +17,7 @@ function App() {
         <ProfileCard />
       </div>
 
-      <HexGenerator />
+      <ClassComponent />
     </>
   );
 }
