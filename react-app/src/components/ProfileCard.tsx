@@ -7,6 +7,14 @@ import {
 import myImage from "../assets/images/eye.jpeg";
 
 function ProfileCard() {
+  fetch("http://127.0.0.1:8000/api/users/", {
+    method: "GET",
+    headers: {},
+    body: undefined,
+  })
+    .then((response) => response.json())
+    .then((data) => {});
+
   let languages = [
     "React",
     "Java",
@@ -35,7 +43,8 @@ function ProfileCard() {
           <img src={myImage} alt="Isaiah Kibet" style={profileStyles} />
         </div>
         <h4 className="name">
-          ISAIAH KIBET <CheckCircleIcon fill="green" stroke="white" />
+          Isaiah Kibet
+          <CheckCircleIcon fill="green" stroke="white" />
         </h4>
         <p className="profession">
           {profession}, {country}
