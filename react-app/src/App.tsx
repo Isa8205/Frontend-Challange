@@ -2,6 +2,7 @@ import ClassComponent from "./components/ClassComponenet";
 import HexGenerator from "./components/HexGenerator";
 import ListGroup from "./components/ListGroup";
 import ProfileCard from "./components/ProfileCard";
+import StarRating from "./components/StarRating";
 
 function App() {
   return (
@@ -9,15 +10,7 @@ function App() {
       <h1>Hello there</h1>
       <p>Where Dreams Are Made a reality</p>
 
-      <div>
-        <ListGroup />
-      </div>
-
-      <div>
-        <ProfileCard />
-      </div>
-
-      <ClassComponent />
+      <StarRating />
     </>
   );
 }

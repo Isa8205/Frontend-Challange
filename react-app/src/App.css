@@ -1,0 +1,41 @@
+.star-container {
+    height: fit-content;
+    padding: 1em .6em;
+    /* background: linear-gradient(135deg, blue, red); */
+    max-width: 50%;
+    border-radius: .5em;
+    border: 1.5px solid rgb(106, 102, 99);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.409);
+    margin-inline-start: 1em;
+}
+
+.star-container > .heading {
+    font-size: 30px;
+    padding-inline: 1em;
+}
+
+.star-container > .star {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+}
+
+.star-container > .star > svg {
+    fill: chocolate;
+    stroke: orange;
+}
+
+[class^="star-bar"] {
+    background-color: rgb(156, 150, 150);
+    height: 1em;
+    position: relative;
+    padding: 0;
+}
+
+[class^="star-bar"] > span {
+    width: 80%;
+    background-color: green;
+    z-index: 2;
+    position: absolute;
+}
